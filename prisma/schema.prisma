@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Hero Section
+model Slide {
+  id          Int      @id @default(autoincrement())
+  image       String
+  title       String
+  description String
+  buttonText  String?
+  buttonUrl   String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Products Section
+model Product {
+  id          Int       @id @default(autoincrement())
+  icon        String
+  image       String?   // Product showcase image
+  title       String
+  description String
+  features    Feature[]
+  buttonText  String?
+  buttonUrl   String?
+  order       Int       @default(0)
+  isActive    Boolean   @default(true)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Feature {
+  id        Int      @id @default(autoincrement())
+  text      String
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id])
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

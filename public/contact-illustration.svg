@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo con efecto de grid -->
+  <rect width="600" height="600" fill="#000B14"/>
+  <pattern id="grid" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+    <rect width="30" height="30" fill="none" stroke="#0FF" stroke-width="0.2" opacity="0.2"/>
+  </pattern>
+  <rect width="600" height="600" fill="url(#grid)"/>
+  
+  <!-- Círculos de neón -->
+  <circle cx="300" cy="300" r="150" stroke="#0FF" stroke-width="2" opacity="0.3"/>
+  <circle cx="300" cy="300" r="200" stroke="#0FF" stroke-width="1" opacity="0.2"/>
+  
+  <!-- Líneas de conexión -->
+  <line x1="150" y1="300" x2="450" y2="300" stroke="#0FF" stroke-width="2" opacity="0.5">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite"/>
+  </line>
+  <line x1="300" y1="150" x2="300" y2="450" stroke="#0FF" stroke-width="2" opacity="0.5">
+    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Puntos de conexión -->
+  <circle cx="300" cy="300" r="10" fill="#0FF">
+    <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="150" cy="300" r="6" fill="#0FF">
+    <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="450" cy="300" r="6" fill="#0FF">
+    <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="150" r="6" fill="#0FF">
+    <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="300" cy="450" r="6" fill="#0FF">
+    <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Texto cyberpunk -->
+  <text x="300" y="280" text-anchor="middle" fill="#0FF" font-family="monospace" font-size="24" opacity="0.8">
+    CONNECT
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </text>
+  <text x="300" y="320" text-anchor="middle" fill="#0FF" font-family="monospace" font-size="24" opacity="0.8">
+    WITH US
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </text>
+</svg>

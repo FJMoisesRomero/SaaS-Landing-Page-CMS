@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-primary: #0ff;
+  --neon-secondary: #0080ff;
+  --background-dark: #080318;
+  --background-gradient: linear-gradient(to bottom, #080318, #1a0b2e);
+  --background: 224 71% 4%;
+  --foreground: 213 31% 91%;
+
+  --muted: 223 47% 11%;
+  --muted-foreground: 215.4 16.3% 56.9%;
+
+  --accent: 216 34% 17%;
+  --accent-foreground: 210 40% 98%;
+
+  --popover: 224 71% 4%;
+  --popover-foreground: 215 20.2% 65.1%;
+
+  --border: 216 34% 17%;
+  --input: 216 34% 17%;
+
+  --card: 224 71% 4%;
+  --card-foreground: 213 31% 91%;
+
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 1.2%;
+
+  --secondary: 222.2 47.4% 11.2%;
+  --secondary-foreground: 210 40% 98%;
+
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+
+  --ring: 216 34% 17%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 224 71% 4%;
+  --foreground: 213 31% 91%;
+
+  --muted: 223 47% 11%;
+  --muted-foreground: 215.4 16.3% 56.9%;
+
+  --accent: 216 34% 17%;
+  --accent-foreground: 210 40% 98%;
+
+  --popover: 224 71% 4%;
+  --popover-foreground: 215 20.2% 65.1%;
+
+  --border: 216 34% 17%;
+  --input: 216 34% 17%;
+
+  --card: 224 71% 4%;
+  --card-foreground: 213 31% 91%;
+
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 1.2%;
+
+  --secondary: 222.2 47.4% 11.2%;
+  --secondary-foreground: 210 40% 98%;
+
+  --destructive: 0 63% 31%;
+  --destructive-foreground: 210 40% 98%;
+
+  --ring: 216 34% 17%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-white;
+    background: var(--background-gradient);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+.dialog-gradient {
+  background: linear-gradient(45deg, rgba(0,0,0,0.9) 0%, rgba(16,16,32,0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.cyberpunk-glow {
+  box-shadow: 0 0 10px rgba(0,255,255,0.2),
+              0 0 20px rgba(0,255,255,0.1),
+              0 0 30px rgba(0,255,255,0.05);
+}
+
+.neon-text {
+  text-shadow: 0 0 5px rgba(0,255,255,0.5),
+               0 0 10px rgba(0,255,255,0.3),
+               0 0 15px rgba(0,255,255,0.2);
+}
+
+.neon-border {
+  box-shadow: 0 0 10px var(--neon-primary),
+              inset 0 0 10px var(--neon-primary);
+}
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9;
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+  }
+  5% {
+    clip: rect(12px, 9999px, 59px, 0);
+  }
+  10% {
+    clip: rect(48px, 9999px, 29px, 0);
+  }
+  15% {
+    clip: rect(42px, 9999px, 73px, 0);
+  }
+  20% {
+    clip: rect(63px, 9999px, 27px, 0);
+  }
+  25% {
+    clip: rect(34px, 9999px, 55px, 0);
+  }
+  30% {
+    clip: rect(86px, 9999px, 73px, 0);
+  }
+  35% {
+    clip: rect(20px, 9999px, 20px, 0);
+  }
+  40% {
+    clip: rect(26px, 9999px, 60px, 0);
+  }
+  45% {
+    clip: rect(25px, 9999px, 66px, 0);
+  }
+  50% {
+    clip: rect(57px, 9999px, 98px, 0);
+  }
+  55% {
+    clip: rect(5px, 9999px, 46px, 0);
+  }
+  60% {
+    clip: rect(82px, 9999px, 31px, 0);
+  }
+  65% {
+    clip: rect(54px, 9999px, 27px, 0);
+  }
+  70% {
+    clip: rect(28px, 9999px, 99px, 0);
+  }
+  75% {
+    clip: rect(45px, 9999px, 69px, 0);
+  }
+  80% {
+    clip: rect(23px, 9999px, 85px, 0);
+  }
+  85% {
+    clip: rect(54px, 9999px, 84px, 0);
+  }
+  90% {
+    clip: rect(45px, 9999px, 47px, 0);
+  }
+  95% {
+    clip: rect(37px, 9999px, 20px, 0);
+  }
+  100% {
+    clip: rect(4px, 9999px, 91px, 0);
+  }
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  text-shadow: 0 0 10px var(--neon-primary),
+               0 0 20px var(--neon-primary),
+               0 0 30px var(--neon-primary);
+  transform: scale(1.05);
+}
+
+.cyber-grid {
+  background-image: linear-gradient(var(--neon-primary) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--neon-primary) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: center center;
+  opacity: 0.1;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, var(--neon-primary), var(--neon-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cyberpunk-gradient {
+  fill: url(#cyberpunk-gradient);
+}
+
+.icon-gradient {
+  --gradient-start: #0ff;
+  --gradient-mid: #0080ff;
+  --gradient-end: #f0f;
+  stroke: url(#cyberpunk-gradient);
+  stroke-width: 1.5;
+}
+
+/* Cyberpunk Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: #000814;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.3), rgba(0, 128, 255, 0.3));
+  border-radius: 4px;
+  border: 2px solid rgba(0, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, rgba(0, 255, 255, 0.5), rgba(0, 128, 255, 0.5));
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 255, 0.3) rgba(0, 255, 255, 0.05);
+}
