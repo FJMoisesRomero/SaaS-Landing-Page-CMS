@@ -9,7 +9,7 @@ A **SaaS Landing Page** with an integrated **Content Management System (CMS)** t
 - **Feature Management** 🌟: Display key features of your service or product.
 - **Customer Messages** 💬: Receive and manage messages from potential customers through a contact form.
 - **Mobile Responsive** 📱: Optimized for mobile and desktop views.
-- 
+
 ## Technologies Used 🛠️
 
 - **Frontend:** Next.js, TypeScript, Tailwind CSS.
